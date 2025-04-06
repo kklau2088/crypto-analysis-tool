@@ -102,3 +102,11 @@ if __name__ == '__main__':
 git add models/__init__.py
 git commit -m "Add models package"
 git push origin main
+
+print(f"当前工作目录: {os.getcwd()}")
+print(f"文件所在目录: {current_dir}")
+print(f"Python 路径: {sys.path}")
+
+# 检查模块是否存在
+print(f"models 目录存在: {os.path.isdir('models')}")
+print(f"onchain.py 存在: {os.path.isfile('models/onchain.py')}")

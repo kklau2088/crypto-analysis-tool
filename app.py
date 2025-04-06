@@ -1,14 +1,25 @@
 # app.py 顶部添加（安全获取环境变量）
 import sys
+import os
 from pathlib import Path
 
-# 设置路径
-BASE_DIR = Path(__file__).parent
-sys.path.insert(0, str(BASE_DIR))
+# 获取当前文件所在目录的绝对路径
+current_dir = Path(__file__).parent.absolute()
 
-# 现在可以安全导入
-from models.onchain import OnchainAnalyzer
+# 将项目根目录添加到 Python 路径
+sys.path.insert(0, str(current_dir))
+
+# 现在可以安全导入自定义模块
+try:
+    from models.onchain import OnchainAnalyzer
+except ImportError as e:
+    print(f"导入错误: {e}")
+    print(f"当前 Python 路径: {sys.path}")
+    raise
+
+# 其他标准库导入
 import pandas as pd
+from flask import Flask, render_template
 
 import os
 API_KEY = os.environ.get('bg_72c0d8b6b38cbca3688f58afc3e1afa7')

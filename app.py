@@ -99,10 +99,6 @@ def run_backtest(df):
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)  # Render 默认使用8080端口
 
-git add models/__init__.py
-git commit -m "Add models package"
-git push origin main
-
 print(f"当前工作目录: {os.getcwd()}")
 print(f"文件所在目录: {current_dir}")
 print(f"Python 路径: {sys.path}")

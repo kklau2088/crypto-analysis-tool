@@ -1,4 +1,10 @@
 # app.py 顶部添加（安全获取环境变量）
+import sys
+from pathlib import Path
+
+# 添加项目根目录到 Python 路径
+sys.path.append(str(Path(__file__).parent))
+
 import os
 API_KEY = os.environ.get('bg_72c0d8b6b38cbca3688f58afc3e1afa7')
 API_SECRET = os.environ.get('458ff44a55c501e72bfd98814bc39548658c0e0d2351ee6abb1f32e330036e33')

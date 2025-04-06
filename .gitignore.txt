@@ -1,4 +1,4 @@
 .env
 __pycache__/
-*.pkl
+predictor.pkl
 *.DS_Store

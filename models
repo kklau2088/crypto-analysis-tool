@@ -1,2 +1,3 @@
 # 在终端执行（确保在项目根目录）
 touch models/__init__.py
+touch models/predictor.pkl

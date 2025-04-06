@@ -13,14 +13,14 @@ from ta import add_all_ta_features
 import joblib
 import plotly.express as px
 import json
-from models.onchain import OnchainAnalyzer
+from models.onchain import OnchainAnalyzer  # 保持原样但要确保路径正确
 
 app = Flask(__name__)
 
 # 初始化API和模型
 client = Client(api_key='your_binance_key', api_secret='your_binance_secret')
 model = joblib.load('models/predictor.pkl')
-onchain = OnchainAnalyzer(api_key='your_glassnode_key')
+onchain = OnchainAnalyzer(api_key='ed162a65-bd02-4a30-bfe4-33eec239d61b')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

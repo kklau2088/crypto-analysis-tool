@@ -2,8 +2,13 @@
 import sys
 from pathlib import Path
 
-# 添加项目根目录到 Python 路径
-sys.path.append(str(Path(__file__).parent))
+# 设置路径
+BASE_DIR = Path(__file__).parent
+sys.path.insert(0, str(BASE_DIR))
+
+# 现在可以安全导入
+from models.onchain import OnchainAnalyzer
+import pandas as pd
 
 import os
 API_KEY = os.environ.get('bg_72c0d8b6b38cbca3688f58afc3e1afa7')
@@ -82,3 +87,7 @@ def run_backtest(df):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)  # Render 默认使用8080端口
+
+git add models/__init__.py
+git commit -m "Add models package"
+git push origin main

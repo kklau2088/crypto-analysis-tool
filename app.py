@@ -75,4 +75,4 @@ def run_backtest(df):
     }
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080)  # Render 默认使用8080端口
